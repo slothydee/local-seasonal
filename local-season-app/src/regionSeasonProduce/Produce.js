@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { getFirestore } from "firebase/firestore";
 import { collection, query, where, getDocs } from "firebase/firestore";
-
-const db = getFirestore();
+import db from "../firebase/db";
 
 const PRODUCE_COLLECTION = "/produce";
 
@@ -62,9 +60,7 @@ export default function Produce({ region, season }) {
           <header>
             {modalDisplayProduce ? modalDisplayProduce.produceName : null}
           </header>
-          <body>
-            {modalDisplayProduce ? modalDisplayProduce.detailString : null}
-          </body>
+          {modalDisplayProduce ? modalDisplayProduce.detailString : null}
           <footer>
             <button type="button" onClick={handleModalClose}>
               Close
