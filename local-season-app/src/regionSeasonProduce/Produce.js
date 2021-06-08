@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, query, where, getDocs } from "firebase/firestore";
-
-initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-});
 
 const db = getFirestore();
 
@@ -67,11 +60,16 @@ export default function Produce({ region, season }) {
       <div className={showHideClassName}>
         <section className="modal-main">
           <header>
+            {modalDisplayProduce ? modalDisplayProduce.produceName : null}
+          </header>
+          <body>
+            {modalDisplayProduce ? modalDisplayProduce.detailString : null}
+          </body>
+          <footer>
             <button type="button" onClick={handleModalClose}>
               Close
             </button>
-          </header>
-          {modalDisplayProduce ? modalDisplayProduce.produceName : "meow"}
+          </footer>
         </section>
       </div>
     );
