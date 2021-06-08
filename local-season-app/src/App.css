@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.produce-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  align-content: space-around;
+}
+.produce-child {
+  flex: 0;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position: fixed;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.6);
+  width: 80%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: calc(10px + 2vmin);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
